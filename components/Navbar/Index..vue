@@ -1,0 +1,36 @@
+<template>
+    <div>
+        <nav class="w-full">
+            <div class="flex flex-col sm:flex-row justify-between">
+                <NavbarLinksDesktop :links="links" />
+                <NavbarAudioplayer />
+                <NavbarMobileWidgetButton class="absolute" />
+                <div
+                    class="absolute sm:hidden w-full opacity-90 sm:mr-0 md:hidden text-white"
+                    :class="!showMenu ? 'hidden' : ''"
+                >
+                    <NavbarMobileWidgetButton />
+                    <NavbarLinksMobile :links="links" />
+                </div>
+            </div>
+        </nav>
+    </div>
+</template>
+
+
+<script setup>
+import { ref, provide } from 'vue'
+const showMenu = ref(false)
+const links = [
+    { name: 'Artistas', url: '/artistas' },
+    { name: 'Shows Recientes', url: '/shows-recientes' },
+    { name: 'Radioshows 1440', url: '/radioshows-1440' },
+    { name: 'Radios Hermanas', url: '/radios-hermanas' },
+]
+
+const showMobileMenu = () => {
+    showMenu.value = !showMenu.value
+}
+
+provide('showMobileMenu', showMobileMenu)
+</script>
