@@ -1,4 +1,7 @@
-# Nuxt 3 Minimal Starter
+## Remake of https://catorcentenaradio.com/
+
+
+# Nuxt 3
 
 We recommend to look at the [documentation](https://v3.nuxtjs.org).
 
@@ -27,3 +30,10 @@ yarn build
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+
+
+
+## CSS Library
+
+We are using https://windicss.org/ and extension of https://tailwindcss.com/docs/installation
+
