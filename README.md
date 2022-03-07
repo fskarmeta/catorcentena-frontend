@@ -35,5 +35,5 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
 
 ## CSS Library
 
-We are using https://windicss.org/ and extension of https://tailwindcss.com/docs/installation
+We are using https://windicss.org/ an extension of https://tailwindcss.com/docs/installation
 
