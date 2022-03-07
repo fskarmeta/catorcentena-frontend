@@ -13,6 +13,7 @@
                     alt="Catorcentena logo"
                 />
             </div>
+            <!-- All pages beeing rendered here -->
             <slot />
         </div>
     </div>

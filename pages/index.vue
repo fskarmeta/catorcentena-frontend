@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <RadioShowCards />
-    </div>
+    <RadioShowCards />
 </template>
 
 <script setup>
