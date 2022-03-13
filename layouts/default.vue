@@ -6,13 +6,15 @@
         ></div>
         <div class="absolute container mx-auto h-auto inset-0 z-0">
             <NavbarIndex />
-            <div class="flex justify-center">
-                <img
-                    class="my-20 w-50 md:w-auto md:h-auto"
-                    :src="logoImage"
-                    alt="Catorcentena logo"
-                />
-            </div>
+            <NuxtLink to="/">
+                <div class="flex justify-center">
+                    <img
+                        class="my-20 w-50 md:w-auto md:h-auto"
+                        :src="logoImage"
+                        alt="Catorcentena logo"
+                    />
+                </div>
+            </NuxtLink>
             <!-- All pages beeing rendered here -->
             <slot />
         </div>
@@ -40,7 +42,7 @@ import backgroundImage from 'images/stars.jpg'
 
 body {
     background-image: url("images/stars.jpg");
-    background-repeat: repeat-x;
+    background-repeat: repeat-y;
     background-color: black;
 }
 </style>

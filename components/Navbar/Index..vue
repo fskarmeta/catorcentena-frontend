@@ -6,11 +6,11 @@
                 <NavbarAudioplayer />
                 <NavbarMobileWidgetButton class="absolute" />
                 <div
-                    class="absolute sm:hidden w-full opacity-90 sm:mr-0 md:hidden text-white"
+                    class="absolute sm:hidden w-full bg-gray-800 sm:mr-0 md:hidden text-white"
                     :class="!showMenu ? 'hidden' : ''"
                 >
                     <NavbarMobileWidgetButton />
-                    <NavbarLinksMobile :links="links" />
+                    <NavbarLinksMobile :links="links"/>
                 </div>
             </div>
         </nav>
@@ -23,9 +23,9 @@ import { ref, provide } from 'vue'
 const showMenu = ref(false)
 const links = [
     { name: 'Artistas', url: '/artistas' },
-    { name: 'Shows Recientes', url: '/shows-recientes' },
-    { name: 'Radioshows 1440', url: '/radioshows-1440' },
-    { name: 'Radios Hermanas', url: '/radios-hermanas' },
+    { name: 'Shows Recientes', url: '/artistas' },
+    { name: 'Radioshows 1440', url: '/artistas' },
+    { name: 'Radios Hermanas', url: '/artistas' },
 ]
 
 const showMobileMenu = () => {
