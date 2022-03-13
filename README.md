@@ -1,6 +1,10 @@
 ## Remake of https://catorcentenaradio.com/
 
+## You need to have installed this programs in your machine
 
+- Node https://nodejs.org/en/download/
+- Git https://git-scm.com/downloads
+- Some Code Editor, we recommend Visual Studio Code https://code.visualstudio.com/
 # Nuxt 3
 
 We recommend to look at the [documentation](https://v3.nuxtjs.org).
@@ -37,3 +41,7 @@ Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
 
 We are using https://windicss.org/ an extension of https://tailwindcss.com/docs/installation
 
+
+## Backend
+
+Backend will be a Strapi instance
