@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav class="w-full">
-            <div class="flex flex-col sm:flex-row justify-between">
+            <div class="flex flex-col sm:flex-row justify-between pt-5">
                 <NavbarLinksDesktop :links="links" />
                 <NavbarAudioplayer />
                 <NavbarMobileWidgetButton class="absolute" />

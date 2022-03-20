@@ -1,12 +1,12 @@
 <template>
   <div class="flex space-x-4">
     <!-- primary nav -->
-    <div class="hidden sm:flex items-center space-x-1">
+    <div class="hidden sm:flex items-center space-x-1 gap-x-5">
       <NuxtLink
         v-for="(link, index) in links"
         :key="index"
         :to="link.url"
-        class="font-mono nav-btn px-5 py-5 box-content hover:border border-white cursor-pointer"
+        class="cursor-pointer"
       >{{ link.name }}</NuxtLink>
     </div>
   </div>
