@@ -6,7 +6,7 @@
         v-for="(link, index) in links"
         :key="index"
         :to="link.url"
-        class="text-white font-mono nav-btn px-5 py-5 box-content hover:border border-white cursor-pointer"
+        class="font-mono nav-btn px-5 py-5 box-content hover:border border-white cursor-pointer"
       >{{ link.name }}</NuxtLink>
     </div>
   </div>

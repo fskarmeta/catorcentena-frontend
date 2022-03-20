@@ -1,14 +1,5 @@
 <template>
   <div class="place-self-center">
-    <Head>
-      <Link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
-    </Head>
     <audio
       ref="player"
       src="//streamingv2.shoutcast.com/catorcentena"
@@ -17,7 +8,7 @@
 
     <div class="flex pt-5 px-5 sm:pt-0 sm:px-0 items-center">
       <i
-        class="fa fa-2x text-white mx-2"
+        class="fa fa-2x mx-2"
         :class="[isPlaying ? 'fa-pause' : 'fa-play']"
         @click="isPlaying ? pause() : play()"
       ></i>

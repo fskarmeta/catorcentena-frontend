@@ -10,7 +10,7 @@
                     :class="!showMenu ? 'hidden' : ''"
                 >
                     <NavbarMobileWidgetButton />
-                    <NavbarLinksMobile :links="links"/>
+                    <NavbarLinksMobile :links="links" />
                 </div>
             </div>
         </nav>
@@ -22,9 +22,8 @@
 import { ref, provide } from 'vue'
 const showMenu = ref(false)
 const links = [
+    { name: 'Radio Shows', url: '/artistas' },
     { name: 'Artistas', url: '/artistas' },
-    { name: 'Shows Recientes', url: '/artistas' },
-    { name: 'Radioshows 1440', url: '/artistas' },
     { name: 'Radios Hermanas', url: '/artistas' },
 ]
 

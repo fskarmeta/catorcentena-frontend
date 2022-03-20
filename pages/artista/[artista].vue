@@ -1,3 +1,3 @@
 <template>
-    <ArtistCards />
+    <ArtistCard />
 </template>

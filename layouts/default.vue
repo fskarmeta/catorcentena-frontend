@@ -5,7 +5,7 @@
             :style="`background-image: url(${backgroundImage})`"
         ></div>
         <div class="absolute container mx-auto h-auto inset-0 z-0">
-            <NavbarIndex />
+            <NavbarMain />
             <NuxtLink to="/">
                 <div class="flex justify-center">
                     <img
