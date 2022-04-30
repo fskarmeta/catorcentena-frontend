@@ -22,9 +22,9 @@
 import { ref, provide } from 'vue'
 const showMenu = ref(false)
 const links = [
-    { name: 'Radio Shows', url: '/artistas' },
+    { name: 'Radio Shows', url: '/' },
     { name: 'Artistas', url: '/artistas' },
-    { name: 'Radios Hermanas', url: '/artistas' },
+    // { name: 'Radios Hermanas', url: '/artistas' },
 ]
 
 const showMobileMenu = () => {
