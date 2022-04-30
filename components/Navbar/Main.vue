@@ -1,35 +1,41 @@
-<template>
-    <div>
-        <nav class="w-full">
-            <div class="flex flex-col sm:flex-row justify-between pt-5">
-                <NavbarLinksDesktop :links="links" />
-                <NavbarAudioplayer />
-                <NavbarMobileWidgetButton class="absolute" />
-                <div
-                    class="absolute sm:hidden w-full bg-gray-800 sm:mr-0 md:hidden text-white"
-                    :class="!showMenu ? 'hidden' : ''"
-                >
-                    <NavbarMobileWidgetButton />
-                    <NavbarLinksMobile :links="links" />
-                </div>
-            </div>
-        </nav>
-    </div>
-</template>
+<script lang="ts" setup>
+import { ref, provide } from "vue";
 
-
-<script setup>
-import { ref, provide } from 'vue'
-const showMenu = ref(false)
-const links = [
-    { name: 'Radio Shows', url: '/' },
-    { name: 'Artistas', url: '/artistas' },
-    // { name: 'Radios Hermanas', url: '/artistas' },
-]
-
-const showMobileMenu = () => {
-    showMenu.value = !showMenu.value
+interface NavbarLinks {
+  name: string;
+  url: string;
 }
 
-provide('showMobileMenu', showMobileMenu)
+const showMenu = ref(false);
+const links: NavbarLinks[] = [
+  { name: "Radio Shows", url: "/" },
+  { name: "Artistas", url: "/artistas" },
+  // { name: 'Radios Hermanas', url: '/artistas' },
+];
+
+const showMobileMenu = () => {
+  showMenu.value = !showMenu.value;
+};
+
+provide("showMobileMenu", showMobileMenu);
 </script>
+
+
+<template>
+  <div>
+    <nav class="w-full">
+      <div class="flex flex-col sm:flex-row justify-between pt-5">
+        <NavbarLinksDesktop :links="links" />
+        <NavbarAudioplayer />
+        <NavbarMobileWidgetButton class="absolute" />
+        <div
+          class="absolute sm:hidden w-full bg-gray-800 sm:mr-0 md:hidden text-white"
+          :class="!showMenu ? 'hidden' : ''"
+        >
+          <NavbarMobileWidgetButton />
+          <NavbarLinksMobile :links="links" />
+        </div>
+      </div>
+    </nav>
+  </div>
+</template>

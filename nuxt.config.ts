@@ -8,4 +8,10 @@ export default defineNuxtConfig({
     images: resolve(__dirname, "./assets/images"),
     style: resolve(__dirname, "./assets/style"),
   },
+  typescript: {
+    strict: true,
+    tsConfig: {
+      typeCheck: true,
+    },
+  },
 });
