@@ -1,9 +1,5 @@
 <template>
-    <RadioShowCards />
+    <NuxtLink to="/radio-show/algo">
+        <RadioShowCards />
+    </NuxtLink>
 </template>
-
-<script setup>
-</script>
-
-<style>
-</style>

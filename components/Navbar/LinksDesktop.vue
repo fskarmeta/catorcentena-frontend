@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+const props = defineProps({
+  links: Array,
+});
+
+const { links } = toRefs(props);
+</script>
+
 <template>
   <div class="flex space-x-4">
     <!-- primary nav -->
@@ -11,11 +19,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-const props = defineProps({
-  links: Array,
-});
-
-const { links } = toRefs(props);
-</script>
