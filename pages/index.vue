@@ -1,5 +1,7 @@
+<script lang="ts" setup>
+const { data } = await useAsyncData('radioShows', () => GqlRadioShows({}));
+</script>
+
 <template>
-    <NuxtLink to="/radio-show/algo">
-        <RadioShowCards />
-    </NuxtLink>
+    <RadioShowCards v-if="data.radioShows" :radio-shows="data.radioShows" />
 </template>

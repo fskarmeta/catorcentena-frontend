@@ -1,26 +1,36 @@
 
-<script setup>
-const props = defineProps({
+<script setup lang="ts">
+defineProps({
     inGridDisplay: Boolean,
+    name: String,
+    socialMedia: Object,
+    musicStyles: Array,
+    image: String,
+    slug: String,
 });
 
-const { inGridDisplay } = toRefs(props);
+const strapiUrl: string = 'http://localhost:1337'
 </script>
 
 <template>
     <div class="flex flex-col place-items-center gap-20px max-w-250px" :class="{ 'text-center': inGridDisplay }">
-        <img v-if="inGridDisplay" class="w-24 h-24 rounded-full shadow-lg" src="@/assets/images/imagen.jpg"
-            alt="projecto" />
-        <NuxtLink v-if="inGridDisplay" to="/artista/bafian">
-            <h1 class="text-3xl">velociratop2321</h1>
+        <NuxtLink v-if="inGridDisplay" :to="`/artista/${slug}`"><img v-if="inGridDisplay"
+                class="w-24 h-24 rounded-full shadow-lg" :src="strapiUrl + image" :alt="`${name} image`" /></NuxtLink>
+        <NuxtLink v-if="inGridDisplay" :to="`/artista/${slug}`">
+            <h1 class="text-3xl">{{ name }}</h1>
         </NuxtLink>
-        <h1 v-else class="text-3xl">Bafian</h1>
+        <h1 v-else class="text-3xl">{{ name }}</h1>
         <div class="flex gap-x-2 text-3xl"
             :class="[inGridDisplay ? 'justify-center' : 'justify-center md:justify-start']">
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-mixcloud"></i>
-            <i class="fa-brands fa-soundcloud"></i>
+            <NuxtLink v-if="socialMedia.instagram" :to="socialMedia.instagram" external> <i
+                    class="fa-brands fa-instagram"></i></NuxtLink>
+            <NuxtLink v-if="socialMedia.mixcloud" :to="socialMedia.mixcloud" external> <i
+                    class="fa-brands fa-mixcloud"></i></NuxtLink>
+            <NuxtLink v-if="socialMedia.soundcloud" :to="socialMedia.soundcloud" external> <i
+                    class="fa-brands fa-soundcloud"></i></NuxtLink>
         </div>
-        <small class="d-block">Ambient / Spoken Word / Meditation / test / test</small>
+        <small class="d-block"> <span v-for="(style, index) in musicStyles">
+                {{ style.style + `${musicStyles.length - 1 !== index ? ' / ' : ''}` }}
+            </span></small>
     </div>
 </template>

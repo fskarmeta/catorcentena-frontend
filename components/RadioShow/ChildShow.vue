@@ -1,25 +1,33 @@
-<script lang="ts" setup>
+<script setup>
+
+const props = defineProps({
+    mix: Object,
+});
+const { mix } = toRefs(props);
+
+
 const mixCloudURI = computed(() => {
-    const mixCloudLink = encodeURIComponent('https://www.mixcloud.com/catorcentenaradio/lagest-night-con-t-fried-1er-aniversario-21032021/')
+    const mixCloudLink = encodeURIComponent(mix.value.mixcloudUrl) 
     return 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=0' + mixCloudLink
 })
 
 </script> 
 
 <template>
-    <div class="max-w-800px border-b border-gray-500 border-dashed py-5">
-        <small>02/04/2022</small>
-        <h3 class="text-2xl mb-2">Canciones para el fin del mundo #19 con The Mugris: 1er Aniversario
-            Catorcentena
+    <div class="max-w-800px sm:w-500px lg:w-800px border-b border-gray-500 border-dashed py-5">
+        <small>{{ mix.date }}</small>
+        <h3 class="text-2xl mb-2">{{ mix.title }}
         </h3>
-        <p class="mb-2">Sed gravida fermentum nisl sed eleifend. Mauris et eros nec orci posuere condimentum in quis
-            odio.
-            Nunc enim enim, commodo ut rutrum sed, vehicula eget magna. Fusce ornare orci mattis purus rhoncus,
-            et sollicitudin felis scelerisque. Duis eleifend dolor sit amet odio venenatis, sed vulputate nunc
-            tincidunt. </p>
-        <div class="flex gap-10px"><small>Bafian,</small><small>Franco Saini,</small><small>Sebastian
-                Rambach</small></div>
-        <small>Slow Tempo / Meditation / Spoken Word</small>
+        <p v-if="mix.description" class="mb-2">{{ mix.description }}</p>
+        <div class="flex gap-10px">
+            <small v-for="(artist, index) in mix.artists">
+                {{ artist.artistName + `${mix.artists.length - 1 !== index ? ', ' : ''}` }}</small>
+        </div>
+        <small>
+            <span v-for="(style, index) in mix.music_styles">
+                {{ style.style + `${mix.music_styles.length - 1 !== index ? ' / ' : ''}` }}
+            </span>
+        </small>
         <iframe title="mix" width="100%" height="120" frameBorder="0" :src="mixCloudURI" />
     </div>
 </template>
