@@ -6,8 +6,10 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nuxt-windicss": "^2.2.5",
-    "nuxt3": "latest"
+    "nuxt": "^3.0.0-rc.1",
+    "nuxt-windicss": "^2.2.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "nuxt-graphql-client": "^0.0.22"
+  }
 }
