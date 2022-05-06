@@ -1,0 +1,12 @@
+query radioShows {
+    radioShows {
+      shortTitle
+      music_styles {
+        style
+      }
+      image {
+      url
+      }
+      Slug
+  }
+}

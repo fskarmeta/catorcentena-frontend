@@ -1,0 +1,18 @@
+query RadioShow($slug: String!) {
+  radioShows(where: {Slug: $slug}) {
+    longTitle
+    description
+		childShow {
+      title
+      date
+      description
+      mixcloudUrl
+      music_styles {
+        style
+      }
+      artists {
+        artistName
+      }
+    }
+  }
+}

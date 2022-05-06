@@ -1,0 +1,17 @@
+query Artists {
+  artists {
+    artistName
+    linkSlug
+    image {
+      url
+    }
+    socialMedia {
+      mixcloud
+      instagram
+      soundcloud
+    }
+    music_styles {
+      style
+    }
+  }
+}
