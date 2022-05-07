@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 const route = useRoute()
 
-const { data, refresh } = await useAsyncData('radioShow', () => GqlRadioShow({ slug: route.params.show as string }));
+const { data } = await useAsyncData(route.params.show as string, () => GqlRadioShow({ slug: route.params.show as string }));
 
-onMounted(() => refresh())
 </script>
 
 

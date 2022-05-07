@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { data } = await useAsyncData('artist', () => GqlArtists({}));
+const { data } = await useAsyncData('artists', () => GqlArtists({}));
 </script>
 
 
