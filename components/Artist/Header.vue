@@ -9,7 +9,8 @@ defineProps({
     slug: String,
 });
 
-const strapiUrl: string = 'http://localhost:1337'
+const config = useRuntimeConfig()
+const { strapiUrl } = config.public
 </script>
 
 <template>
@@ -29,8 +30,8 @@ const strapiUrl: string = 'http://localhost:1337'
             <NuxtLink v-if="socialMedia.soundcloud" :to="socialMedia.soundcloud" external> <i
                     class="fa-brands fa-soundcloud"></i></NuxtLink>
         </div>
-        <small class="d-block"> <span v-for="(style, index) in musicStyles">
-                {{ style.style + `${musicStyles.length - 1 !== index ? ' / ' : ''}` }}
-            </span></small>
+        <small class="d-block">
+            <UtilTagDivider :object="musicStyles" child-name="style" tag="/" />
+        </small>
     </div>
 </template>

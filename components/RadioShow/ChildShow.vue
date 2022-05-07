@@ -7,7 +7,7 @@ const { mix } = toRefs(props);
 
 
 const mixCloudURI = computed(() => {
-    const mixCloudLink = encodeURIComponent(mix.value.mixcloudUrl) 
+    const mixCloudLink = encodeURIComponent(mix.value.mixcloudUrl)
     return 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=0' + mixCloudLink
 })
 
@@ -20,13 +20,12 @@ const mixCloudURI = computed(() => {
         </h3>
         <p v-if="mix.description" class="mb-2">{{ mix.description }}</p>
         <div class="flex gap-10px">
-            <small v-for="(artist, index) in mix.artists">
-                {{ artist.artistName + `${mix.artists.length - 1 !== index ? ', ' : ''}` }}</small>
+            <small>
+                <UtilTagDivider :object="mix.artists" child-name="artistName" tag="," />
+            </small>
         </div>
         <small>
-            <span v-for="(style, index) in mix.music_styles">
-                {{ style.style + `${mix.music_styles.length - 1 !== index ? ' / ' : ''}` }}
-            </span>
+            <UtilTagDivider :object="mix.music_styles" child-name="style" tag="/" />
         </small>
         <iframe title="mix" width="100%" height="120" frameBorder="0" :src="mixCloudURI" />
     </div>

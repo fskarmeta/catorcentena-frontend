@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
+
+const config = useRuntimeConfig()
+
 const player = ref()
 const isPlaying = ref(false)
 const currentVolume = ref('100')
 
 
 const play = () => {
-  player.value.src = '//Fps2.listen2myradio.com:2199/listen.php?ip=109.169.23.17&port=9090&type=ice&mount=1440radio'
+  player.value.src = config.public.radioHost
   player.value.load()
   player.value.play()
   isPlaying.value = true
@@ -30,7 +33,7 @@ const volume = (e: Event) => {
 <template>
   <div class="place-self-center">
     <audio ref="player"
-      src="//Fps2.listen2myradio.com:2199/listen.php?ip=109.169.23.17&port=9090&type=ice&mount=1440radio"
+      :src="config.public.radioHost"
       type="audio/mp3">Your browser does not support the audio element.</audio>
 
     <div class="flex pt-5 px-5 sm:pt-0 sm:px-0 items-center">

@@ -1,9 +1,11 @@
 <script lang="ts" setup>
+
 defineProps({
     artist: Object
 });
 
-const strapiUrl: string = 'http://localhost:1337'
+const config = useRuntimeConfig()
+const { strapiUrl } = config.public
 </script>
 
 <template>

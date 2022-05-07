@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   buildModules: ["nuxt-windicss", "nuxt-graphql-client"],
   alias: {
     images: resolve(__dirname, "./assets/images"),
-    style: resolve(__dirname, "./assets/style"),
   },
   typescript: {
     strict: true,
@@ -17,6 +16,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       GQL_HOST: "http://localhost:1337/graphql",
+      radioHost: "//Fps2.listen2myradio.com:2199/listen.php?ip=109.169.23.17&port=9090&type=ice&mount=1440radio",
+      strapiUrl: "http://localhost:1337"
     }
   },
   baseUrl: "https://localhost:3000",
