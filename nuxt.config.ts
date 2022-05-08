@@ -8,9 +8,9 @@ export default defineNuxtConfig({
     images: resolve(__dirname, "./assets/images"),
   },
   typescript: {
-    strict: false,
+    strict: true,
     tsConfig: {
-      typeCheck: false,
+      typeCheck: true,
     },
   },
   runtimeConfig: {
