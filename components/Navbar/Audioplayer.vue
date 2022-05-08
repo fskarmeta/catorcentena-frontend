@@ -9,7 +9,7 @@ const currentVolume = ref('100')
 
 
 const play = () => {
-  player.value.src = config.public.radioHost
+  player.value.src = config.public.RADIO_HOST
   player.value.load()
   player.value.play()
   isPlaying.value = true
@@ -33,7 +33,7 @@ const volume = (e: Event) => {
 <template>
   <div class="place-self-center">
     <audio ref="player"
-      :src="config.public.radioHost"
+      :src="config.public.RADIO_HOST"
       type="audio/mp3">Your browser does not support the audio element.</audio>
 
     <div class="flex pt-5 px-5 sm:pt-0 sm:px-0 items-center">

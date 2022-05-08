@@ -1,17 +1,30 @@
 query Artists {
   artists {
-    artistName
-    linkSlug
-    image {
-      url
-    }
-    socialMedia {
-      mixcloud
-      instagram
-      soundcloud
-    }
-    music_styles {
-      style
+    data {
+      attributes {
+        artistName
+        slug
+        image {
+          data {
+            attributes {
+              url
+              formats
+            }
+          }
+        }
+        socialMedia {
+          instagram
+          soundcloud
+          mixcloud
+        }
+        music_styles {
+          data {
+            attributes {
+              style
+            }
+          }
+        }
+      }
     }
   }
 }

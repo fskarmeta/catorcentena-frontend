@@ -1,12 +1,25 @@
 query radioShows {
-    radioShows {
-      shortTitle
-      music_styles {
-        style
+	radioShows {
+    data {
+      attributes {
+        shortTitle
+        slug
+        image {
+          data {
+            attributes {
+              name
+              url
+            }
+          }
+        }
+        music_styles {
+          data {
+            attributes {
+              style
+            }
+          }
+        }
       }
-      image {
-      url
-      }
-      Slug
+    }
   }
 }

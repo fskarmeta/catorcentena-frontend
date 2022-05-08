@@ -4,5 +4,5 @@ const { data } = await useAsyncData('artists', () => GqlArtists({}));
 
 
 <template>
-    <ArtistCards v-if="data.artists.length" :artists="data.artists"/>
+    <ArtistCards v-if="data.artists.data.length" :artists="data.artists.data"/>
 </template>

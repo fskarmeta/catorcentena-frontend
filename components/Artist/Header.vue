@@ -4,19 +4,16 @@ defineProps({
     inGridDisplay: Boolean,
     name: String,
     socialMedia: Object,
-    musicStyles: Array,
+    musicStyles: Object,
     image: String,
     slug: String,
 });
-
-const config = useRuntimeConfig()
-const { strapiUrl } = config.public
 </script>
 
 <template>
     <div class="flex flex-col place-items-center gap-20px max-w-250px" :class="{ 'text-center': inGridDisplay }">
         <NuxtLink v-if="inGridDisplay" :to="`/artista/${slug}`"><img v-if="inGridDisplay"
-                class="w-24 h-24 rounded-full shadow-lg" :src="strapiUrl + image" :alt="`${name} image`" /></NuxtLink>
+                class="w-24 h-24 rounded-full shadow-lg" :src="image" :alt="`${name} image`" /></NuxtLink>
         <NuxtLink v-if="inGridDisplay" :to="`/artista/${slug}`">
             <h1 class="text-3xl">{{ name }}</h1>
         </NuxtLink>
@@ -31,7 +28,7 @@ const { strapiUrl } = config.public
                     class="fa-brands fa-soundcloud"></i></NuxtLink>
         </div>
         <small class="d-block">
-            <UtilTagDivider :object="musicStyles" child-name="style" tag="/" />
+            <UtilTagDivider :array="musicStyles.data" child-name="style" tag="/" />
         </small>
     </div>
 </template>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps({
-    radioShows: Object,
+    radioShows: Array,
 });
 </script>
 

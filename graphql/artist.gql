@@ -1,22 +1,40 @@
 query Artist($slug: String!) {
-  artists(where: {linkSlug: $slug}) {
-    artistName
-    linkSlug
-   	image {
-      url
-    }
-    socialMedia {
-      mixcloud
-      instagram
-      soundcloud
-    }
-    music_styles {
-      style
-    }
-    description
-    radio_shows {
-      longTitle
-      Slug
+  artists(filters: { slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        artistName
+        slug
+        description
+        socialMedia {
+          instagram
+          soundcloud
+          mixcloud
+        }
+        image {
+          data {
+            attributes {
+              url
+              formats
+            }
+          }
+        }
+        music_styles {
+          data {
+            attributes {
+              style
+            }
+          }
+        }
+        radio_shows {
+          data {
+            attributes {
+              longTitle
+              slug
+            }
+          }
+        }
+      }
     }
   }
 }

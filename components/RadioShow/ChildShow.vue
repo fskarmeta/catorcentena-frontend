@@ -20,12 +20,9 @@ const mixCloudURI = computed(() => {
         </h3>
         <p v-if="mix.description" class="mb-2">{{ mix.description }}</p>
         <div class="flex gap-10px">
-            <small>
-                <UtilTagDivider :object="mix.artists" child-name="artistName" tag="," />
-            </small>
         </div>
         <small>
-            <UtilTagDivider :object="mix.music_styles" child-name="style" tag="/" />
+            <UtilTagDivider :array="mix.music_styles.data" child-name="style" tag="/" />
         </small>
         <iframe title="mix" width="100%" height="120" frameBorder="0" :src="mixCloudURI" />
     </div>

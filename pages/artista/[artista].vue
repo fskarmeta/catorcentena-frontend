@@ -6,5 +6,5 @@ const { data } = await useAsyncData(route.params.artista as string, () => GqlArt
 </script>
 
 <template>
-    <ArtistCard v-if="data.artists[0]" :artist="data.artists[0]"/>
+    <ArtistCard v-if="data.artists.data.length" :artist="data.artists.data[0]" />
 </template>

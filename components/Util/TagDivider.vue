@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps({
-    object: Object,
+    array: Array,
     childName: String,
     tag: String,
 });
@@ -9,7 +9,7 @@ defineProps({
 
 
 <template>
-    <span v-for="(child, index) in object">
-        {{ child[childName] + `${object.length - 1 !== index ? ` ${tag} ` : ''}` }}
+    <span v-for="(child, index) in array">
+        {{ child.attributes[childName] + `${array.length - 1 !== index ? ` ${tag} ` : ''}` }}
     </span>
 </template>
