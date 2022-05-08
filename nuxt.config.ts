@@ -15,10 +15,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      GQL_HOST: process.env.GQL_HOST || "http://localhost:1337/graphql",
-      RADIO_HOST: process.env.RADIO_HOST,
-      BASE_URL: process.env.BASE_URL || "http://localhost:3000",
+      GQL_HOST: "https://catorcentena-graphql.herokuapp.com/graphql",
+      RADIO_HOST: "//Fps2.listen2myradio.com:2199/listen.php?ip=109.169.23.17&port=9090&type=ice&mount=1440radio",
     }
   },
-  baseUrl: process.env.BASE_URL || "http://localhost:3000",
 });
