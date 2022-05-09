@@ -1,3 +1,6 @@
+## Status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c57fa59a-428d-4636-9913-7b933950ff9e/deploy-status)](https://app.netlify.com/sites/catorcentena/deploys)
+
 ## Remake of https://catorcentenaradio.com/
 
 ## You need to have installed this programs in your machine
