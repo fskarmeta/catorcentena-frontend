@@ -8,7 +8,7 @@
           <img class="my-20 w-50 md:w-auto md:h-auto" :src="logoImage" alt="Catorcentena logo" />
         </NuxtLink>
       </div>
-      <div class="mx-5 md:mx-0">
+      <div class="mx-5 md:mx-0 mb-5">
         <!-- All pages beeing rendered here -->
         <slot />
       </div>
