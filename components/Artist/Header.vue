@@ -13,7 +13,7 @@ defineProps({
 <template>
     <div class="flex flex-col place-items-center gap-20px max-w-250px" :class="{ 'text-center': inGridDisplay }">
         <NuxtLink v-if="inGridDisplay" :to="`/artista/${slug}`"><img v-if="inGridDisplay"
-                class="w-24 h-24 rounded-full shadow-lg" :src="image" :alt="`${name} image`" /></NuxtLink>
+                class="object-cover w-24 h-24 rounded-full shadow-lg" :src="image" :alt="`${name} image`" /></NuxtLink>
         <NuxtLink v-if="inGridDisplay" :to="`/artista/${slug}`">
             <h1 class="text-3xl">{{ name }}</h1>
         </NuxtLink>
