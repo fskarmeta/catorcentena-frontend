@@ -6,10 +6,11 @@ const { data } = await useAsyncData(route.params.artista as string, () => GqlArt
 </script>
 
 <template>
-
-    <Head>
-        <Title>{{ `${data.artists.data[0].attributes.artistName} en catorcentena` }}</Title>
-        <Meta name="description" :content="`${data.artists.data[0].attributes.artistName} en catorcentena`" />
-    </Head>
-    <ArtistCard v-if="data.artists.data.length" :artist="data.artists.data[0]" />
+    <div>
+        <Head>
+            <Title>{{ `${data.artists.data[0].attributes.artistName} en catorcentena` }}</Title>
+            <Meta name="description" :content="`${data.artists.data[0].attributes.artistName} en catorcentena`" />
+        </Head>
+        <ArtistCard v-if="data.artists.data.length" :artist="data.artists.data[0]" />
+    </div>
 </template>

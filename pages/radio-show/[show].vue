@@ -5,15 +5,20 @@ const { data } = await useAsyncData(route.params.show as string, () => GqlRadioS
 
 
 <template>
-    <Title>{{ `${data.radioShows.data[0].attributes.longTitle} show en catorcentena` }}</Title>
-    <Meta name="description" :content="`${data.radioShows.data[0].attributes.longTitle} show en catorcentena`" />
-    <div v-if="data.radioShows.data[0]">
-        <RadioShowHead :title="data.radioShows.data[0].attributes.longTitle"
-            :description="data.radioShows.data[0].attributes.description"
-            :artists="data.radioShows.data[0].attributes.artists.data" />
-        <div v-if="data.radioShows.data[0].attributes.childShow.length"
-            class="flex flex-col md:place-items-center mt-10">
-            <RadioShowChildShow v-for="mix in data.radioShows.data[0].attributes.childShow" :mix="mix" />
+    <div>
+        <Head>
+            <Title>{{ `${data.radioShows.data[0].attributes.longTitle} show en catorcentena` }}</Title>
+            <Meta name="description"
+                :content="`${data.radioShows.data[0].attributes.longTitle} show en catorcentena`" />
+        </Head>
+        <div v-if="data.radioShows.data[0]">
+            <RadioShowHead :title="data.radioShows.data[0].attributes.longTitle"
+                :description="data.radioShows.data[0].attributes.description"
+                :artists="data.radioShows.data[0].attributes.artists.data" />
+            <div v-if="data.radioShows.data[0].attributes.childShow.length"
+                class="flex flex-col md:place-items-center mt-10">
+                <RadioShowChildShow v-for="mix in data.radioShows.data[0].attributes.childShow" :mix="mix" />
+            </div>
         </div>
     </div>
 </template>

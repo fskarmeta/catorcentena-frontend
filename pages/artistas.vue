@@ -4,9 +4,11 @@ const { data } = await useAsyncData('artists', () => GqlArtists({}));
 
 
 <template>
-    <Head>
-      <Title>Catorcentena Artistas</Title>
-      <Meta name="description" content="Catorcentena Artistas" />
-    </Head>
-    <ArtistCards v-if="data.artists.data.length" :artists="data.artists.data"/>
+    <div>
+        <Head>
+            <Title>Catorcentena Artistas</Title>
+            <Meta name="description" content="Catorcentena Artistas" />
+        </Head>
+        <ArtistCards v-if="data.artists.data.length" :artists="data.artists.data" />
+    </div>
 </template>
