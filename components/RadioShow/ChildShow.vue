@@ -18,10 +18,9 @@ onMounted(() => {
         setTimeout(() => {
             const widget = Mixcloud.PlayerWidget(document.getElementById(`mixcloud-widget-${mix.value.id}`));
             widget.ready.then(function () {
-                console.log(mix.value.id)
                 widget.events.play.on(stopAudioPlayer);
             });
-        }, 5000)
+        }, 1500)
     }
 })
 
