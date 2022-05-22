@@ -31,7 +31,7 @@ const volume = (e: Event) => {
 
 
 <template>
-  <div class="place-self-center">
+  <div class="place-self-center mt-10 sm:mt-0">
     <audio ref="player"
       :src="config.public.RADIO_HOST"
       type="audio/mp3">Your browser does not support the audio element.</audio>

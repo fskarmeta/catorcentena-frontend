@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 const route = useRoute()
-const { data } = await useAsyncData(route.params.show as string, () => GqlRadioShow({ slug: route.params.show as string }));
+const { data, pending } = await useAsyncData(route.params.show as string, () => GqlRadioShow({ slug: route.params.show as string }));
 </script>
 
 
 <template>
     <div>
+        <UtilSpinner v-if="pending" />
+
         <Head>
             <Title>{{ `${data.radioShows.data[0].attributes.longTitle} show en catorcentena` }}</Title>
             <Meta name="description"

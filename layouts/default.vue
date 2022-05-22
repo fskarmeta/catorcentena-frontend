@@ -1,3 +1,9 @@
+<script setup>
+import logoImage from "images/logo.png";
+import backgroundImage from "images/stars.jpg";
+
+</script>
+
 <template>
   <div class="bg-black self-center">
     <div class="stars" :style="`background-image: url(${backgroundImage})`"></div>
@@ -16,17 +22,13 @@
   </div>
 </template>
 
-<script setup>
-import logoImage from "images/logo.png";
-import backgroundImage from "images/stars.jpg";
-</script>
 
 <style>
 .stars {
   width: 200%;
   animation: move-stars 100s linear infinite;
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;

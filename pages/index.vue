@@ -1,9 +1,13 @@
 <script lang="ts" setup>
-const { data } = await useAsyncData('radioShows', () => GqlRadioShows({}));
+const { data, pending } = await useAsyncData('radioShows', () => GqlRadioShows({}));
+
+
 </script>
 
 <template>
     <div>
+        <UtilSpinner v-if="pending" />
+
         <Head>
             <Title>Catorcentena Radioshows</Title>
             <Meta name="description" content="Catorcentena Radioshows" />

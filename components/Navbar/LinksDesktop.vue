@@ -14,7 +14,7 @@ const { links } = toRefs(props);
         v-for="(link, index) in links"
         :key="index"
         :to="link.url"
-        class="cursor-pointer"
+        class="cursor-pointer hover:text-green-200"
       >{{ link.name }}</NuxtLink>
     </div>
   </div>

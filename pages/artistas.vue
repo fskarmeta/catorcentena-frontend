@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-const { data } = await useAsyncData('artists', () => GqlArtists({}));
+const { data, pending } = await useAsyncData('artists', () => GqlArtists({}));
 </script>
 
 
 <template>
     <div>
+        <UtilSpinner v-if="pending" />
+
         <Head>
             <Title>Catorcentena Artistas</Title>
             <Meta name="description" content="Catorcentena Artistas" />
