@@ -20,4 +20,11 @@ export default defineNuxtConfig({
       RADIO_HOST: "//Fps2.listen2myradio.com:2199/listen.php?ip=109.169.23.17&port=9090&type=ice&mount=1440radio",
     }
   },
+  app: {
+    head: {
+      script: [
+        { src: '//widget.mixcloud.com/media/js/widgetApi.js' }
+      ]
+    }
+  }
 });

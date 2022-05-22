@@ -1,32 +1,12 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useAudioPlayer } from '~~/composables/useAudioPlayer';
 
 const config = useRuntimeConfig()
 
 const player = ref()
-const isPlaying = ref(false)
-const currentVolume = ref('100')
 
-
-const play = () => {
-  player.value.src = config.public.RADIO_HOST
-  player.value.load()
-  player.value.play()
-  isPlaying.value = true
-}
-const pause = () => {
-  player.value.pause()
-  player.value.src = ''
-  player.value.load()
-  isPlaying.value = false
-}
-
-const volume = (e: Event) => {
-  const target = (<HTMLInputElement>e.target)
-  const currentValue: number = +target.value
-  player.value.volume = currentValue / 100
-  currentVolume.value = target.value
-}
+const { isPlaying, currentVolume, play, pause, volume } = useAudioPlayer(player)
 </script>
 
 

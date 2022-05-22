@@ -13,6 +13,7 @@ query RadioShow($slug: String!) {
           }
         }
         childShow {
+          id
           date
           title
           description
