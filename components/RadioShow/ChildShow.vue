@@ -15,12 +15,10 @@ const mixCloudURI = computed(() => {
 
 onMounted(() => {
     if (process.client) {
-        setTimeout(() => {
-            const widget = Mixcloud.PlayerWidget(document.getElementById(`mixcloud-widget-${mix.value.id}`));
-            widget.ready.then(function () {
-                widget.events.play.on(stopAudioPlayer);
-            });
-        }, 1500)
+        const widget = Mixcloud.PlayerWidget(document.getElementById(`mixcloud-widget-${mix.value.id}`));
+        widget.ready.then(function () {
+            widget.events.play.on(stopAudioPlayer);
+        });
     }
 })
 
