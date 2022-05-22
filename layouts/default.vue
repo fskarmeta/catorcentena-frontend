@@ -1,7 +1,6 @@
 <script setup>
 import logoImage from "images/logo.png";
 import backgroundImage from "images/stars.jpg";
-
 </script>
 
 <template>
