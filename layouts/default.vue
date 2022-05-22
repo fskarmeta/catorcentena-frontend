@@ -1,7 +1,7 @@
 <template>
-  <div class="overflow-hidden bg-black self-center">
-    <div class="h-screen bg-repeat stars z-100" :style="`background-image: url(${backgroundImage})`"></div>
-    <div class="absolute container mx-auto h-auto inset-0 z-0">
+  <div class="bg-black self-center">
+    <div class="stars" :style="`background-image: url(${backgroundImage})`"></div>
+    <div class="relative container mx-auto">
       <NavbarMain />
       <div class="flex justify-center">
         <NuxtLink to="/">
@@ -25,6 +25,11 @@ import backgroundImage from "images/stars.jpg";
 .stars {
   width: 200%;
   animation: move-stars 100s linear infinite;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 @keyframes move-stars {
