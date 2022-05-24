@@ -1,5 +1,5 @@
 <script setup>
-import { stopAudioPlayer } from '~~/composables/useAudioPlayer';
+// import { stopAudioPlayer } from '~~/composables/useAudioPlayer';
 const props = defineProps({
     mix: Object,
 });
@@ -11,16 +11,15 @@ const mixCloudURI = computed(() => {
     return 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=0' + mixCloudLink
 })
 
-// const playWidget = () => console.log('le dio play')
 
-onMounted(() => {
-    if (process.client) {
-        const widget = Mixcloud.PlayerWidget(document.getElementById(`mixcloud-widget-${mix.value.id}`));
-        widget.ready.then(function () {
-            widget.events.play.on(stopAudioPlayer);
-        });
-    }
-})
+// onMounted(() => {
+//     if (process.client) {
+//         const widget = Mixcloud.PlayerWidget(document.getElementById(`mixcloud-widget-${mix.value.id}`));
+//         widget.ready.then(function () {
+//             widget.events.play.on(stopAudioPlayer);
+//         });
+//     }
+// })
 
 </script> 
 
