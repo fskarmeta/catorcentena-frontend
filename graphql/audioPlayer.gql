@@ -1,0 +1,9 @@
+query Audioplayer {
+  audioPlayer {
+    data {
+      attributes {
+        live
+      }
+    }
+  }
+}

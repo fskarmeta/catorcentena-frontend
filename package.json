@@ -11,6 +11,8 @@
     "nuxt-windicss": "^2.2.5"
   },
   "dependencies": {
-    "nuxt-graphql-client": "^0.0.22"
+    "nuxt-graphql-client": "^0.0.22",
+    "sass": "^1.52.1",
+    "sass-loader": "^13.0.0"
   }
 }
