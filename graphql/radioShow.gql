@@ -9,6 +9,7 @@ query RadioShow($slug: String!) {
           data {
             attributes {
               artistName
+              slug
             }
           }
         }
