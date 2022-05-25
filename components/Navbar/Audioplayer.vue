@@ -34,16 +34,18 @@ onMounted(async () => {
 
 
 <template>
-  <div class="place-self-center mt-10 sm:mt-0 flex">
+  <div class="relative place-self-center mt-10 sm:mt-0">
     <audio ref="player" :src="config.public.RADIO_HOST" type="audio/mp3">Your browser does not support the audio
       element.</audio>
 
-    <div class="flex pt-5 px-5 sm:pt-0 sm:px-0 items-center">
-      <i class="fa fa-2x mx-2" :class="[isPlaying ? 'fa-pause' : 'fa-play']" @click="isPlaying ? pause() : play()"></i>
-      <input class="w-full ml-3" type="range" min="0" max="100" @change="volume" :value="currentVolume" />
-      <NavbarLiveNow />
+    <div class="flex flex-col sm:flex-row items-center">
+      <div class="flex pt-5 px-5 sm:pt-0 sm:px-0 items-center order-2 sm:order-1"><i class="fa fa-2x mx-2"
+          :class="[isPlaying ? 'fa-pause' : 'fa-play']" @click="isPlaying ? pause() : play()"></i>
+        <input class="w-full ml-3" type="range" min="0" max="100" @change="volume" :value="currentVolume" />
+      </div>
+      <NavbarLiveNow class="order-1 sm:order-2"/>
     </div>
-    <div class="wrapper absolute">
+    <div class="wrapper absolute w-200px">
       <p class="target">{{ songTitle }}</p>
     </div>
   </div>
@@ -56,7 +58,6 @@ input[type="range"] {
 }
 
 .wrapper {
-  width: 200px;
   margin: auto;
   overflow-x: hidden;
 }
@@ -66,7 +67,7 @@ input[type="range"] {
   white-space: nowrap;
   color: #fbfbfb;
   animation-name: rightToLeft;
-  animation-duration: 10s;
+  animation-duration: 12s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   /* animation: rightToLeft 4.5s linear infinite; */
@@ -74,7 +75,7 @@ input[type="range"] {
 
 @keyframes rightToLeft {
   0% {
-    transform: translateX(200px);
+    transform: translateX(300px);
   }
 
   100% {
