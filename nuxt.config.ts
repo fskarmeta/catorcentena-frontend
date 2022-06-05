@@ -20,7 +20,6 @@ export default defineNuxtConfig({
       name: "Catorcentena Radio",
       short_name: "Catorcentena Radio",
       description: "Worldwide DJ Community",
-      start_url: "/",
     },
     workbox: {
       enabled: true,
