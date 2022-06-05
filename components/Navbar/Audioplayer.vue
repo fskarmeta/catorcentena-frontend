@@ -27,7 +27,7 @@ onMounted(async () => {
     } catch (e) {
       console.log(e)
     }
-  }, 10000)
+  }, 45000)
 }
 )
 </script>
