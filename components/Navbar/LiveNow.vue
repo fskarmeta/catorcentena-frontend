@@ -4,7 +4,6 @@ const isLive = ref(false);
 onMounted(async () => {
     try {
         const data = await GqlAudioplayer();
-        console.log(data)
         const { live } = data.audioPlayer.data.attributes
         isLive.value = live
     } catch (error) {
