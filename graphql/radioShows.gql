@@ -1,5 +1,5 @@
 query radioShows {
-	radioShows {
+	radioShows(sort:"updatedAt:desc") {
     data {
       attributes {
         shortTitle
