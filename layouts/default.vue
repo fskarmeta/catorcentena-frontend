@@ -1,7 +1,7 @@
 <script setup>
-import logoImage from "images/logo.png";
-import ogImage from "images/ogImage.png";
-import backgroundImage from "images/stars.jpg";
+import logoImage from 'images/logo.png'
+import ogImage from 'images/ogImage.png'
+import backgroundImage from 'images/stars.jpg'
 </script>
 
 <template>
@@ -71,7 +71,7 @@ import backgroundImage from "images/stars.jpg";
 }
 
 body {
-  background-image: url("images/stars.jpg");
+  background-image: url('images/stars.jpg');
   background-repeat: repeat-y;
   background-color: black;
 }

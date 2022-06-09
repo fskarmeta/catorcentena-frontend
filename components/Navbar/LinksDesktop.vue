@@ -1,9 +1,12 @@
 <script lang="ts" setup>
 const props = defineProps({
-  links: Array,
-});
+  links: {
+    type: Array,
+    default: () => [],
+  },
+})
 
-const { links } = toRefs(props);
+const { links } = toRefs(props)
 </script>
 
 <template>
@@ -15,7 +18,8 @@ const { links } = toRefs(props);
         :key="index"
         :to="link.url"
         class="cursor-pointer hover:text-green-200"
-      >{{ link.name }}</NuxtLink>
+        >{{ link.name }}</NuxtLink
+      >
     </div>
   </div>
 </template>

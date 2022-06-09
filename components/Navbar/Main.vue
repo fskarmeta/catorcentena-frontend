@@ -1,25 +1,24 @@
 <script lang="ts" setup>
-import { ref, provide } from "vue";
+import { ref, provide } from 'vue'
 
 interface NavbarLinks {
-  name: string;
-  url: string;
+  name: string
+  url: string
 }
 
-const showMenu = ref(false);
+const showMenu = ref(false)
 const links: NavbarLinks[] = [
-  { name: "Radio Shows", url: "/" },
-  { name: "Artistas", url: "/artistas" },
+  { name: 'Radio Shows', url: '/' },
+  { name: 'Artistas', url: '/artistas' },
   // { name: 'Radios Hermanas', url: '/artistas' },
-];
+]
 
 const showMobileMenu = () => {
-  showMenu.value = !showMenu.value;
-};
+  showMenu.value = !showMenu.value
+}
 
-provide("showMobileMenu", showMobileMenu);
+provide('showMobileMenu', showMobileMenu)
 </script>
-
 
 <template>
   <div>

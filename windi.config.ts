@@ -1,7 +1,7 @@
-import { defineConfig } from "windicss/helpers";
+import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
   extract: {
-    exclude: ["node_modules/**/*", ".git/**/*"],
+    exclude: ['node_modules/**/*', '.git/**/*'],
   },
-});
+})

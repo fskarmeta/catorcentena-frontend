@@ -1,19 +1,20 @@
-export default async (context) => {
+export default async () => {
   try {
-    const workbox = await window.$workbox;
+    const workbox = await window.$workbox
 
     if (!workbox) {
-      return;
+      return
     }
 
-    workbox.addEventListener("installed", (event) => {
+    workbox.addEventListener('installed', (event) => {
       if (!event.isUpdate) {
-        return;
+        return
       }
 
-      window.location.reload();
-    });
+      window.location.reload()
+    })
   } catch (e) {
-    console.log("workbox error", e.message);
+    // eslint-disable-next-line no-console
+    console.log('workbox error', e.message)
   }
-};
+}
