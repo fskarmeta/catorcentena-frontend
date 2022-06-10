@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const { data, pending } = await useAsyncData('artists', () => GqlArtists({}))
+const { data, pending } = await useAsyncData('artists', async () => {
+  const arr = await GqlArtists({})
+  return arr.artists.data.sort(() => (Math.random() > 0.5 ? 1 : -1))
+})
 </script>
 
 <template>
@@ -10,6 +13,6 @@ const { data, pending } = await useAsyncData('artists', () => GqlArtists({}))
       <Title>Catorcentena Artistas</Title>
       <Meta name="description" content="Catorcentena Artistas" />
     </Head>
-    <ArtistCards v-if="data.artists.data.length" :artists="data.artists.data" />
+    <ArtistCards v-if="data.length" :artists="data" />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   inGridDisplay: {
     type: Boolean,
     default: false,
@@ -25,11 +25,17 @@ defineProps({
     default: '',
   },
 })
+
+const { socialMedia } = toRefs(props)
+
+const availableSocialMedia = computed(() =>
+  Object.keys(socialMedia.value).filter((media) => socialMedia.value[media])
+)
 </script>
 
 <template>
   <div
-    class="flex flex-col place-items-center gap-20px max-w-250px"
+    class="flex flex-col place-items-center gap-20px w-300px"
     :class="{ 'text-center': inGridDisplay }"
   >
     <NuxtLink v-if="inGridDisplay" :to="`/artista/${slug}`"
@@ -44,28 +50,25 @@ defineProps({
     </NuxtLink>
     <h1 v-else class="text-3xl">{{ name }}</h1>
     <div
-      class="flex gap-x-2 text-3xl"
+      class="flex gap-x-2 text-xs"
       :class="[
-        inGridDisplay ? 'justify-center' : 'justify-center md:justify-start',
+        inGridDisplay
+          ? 'justify-center'
+          : 'justify-center md:justify-start mt-2',
       ]"
     >
       <NuxtLink
-        v-if="socialMedia.instagram"
-        :to="socialMedia.instagram"
+        v-for="(media, index) in availableSocialMedia"
+        :key="index"
+        :to="socialMedia[media]"
+        class="cursor-pointer hover:text-green-200"
         external
       >
-        <i class="fa-brands fa-instagram"></i
-      ></NuxtLink>
-      <NuxtLink v-if="socialMedia.mixcloud" :to="socialMedia.mixcloud" external>
-        <i class="fa-brands fa-mixcloud"></i
-      ></NuxtLink>
-      <NuxtLink
-        v-if="socialMedia.soundcloud"
-        :to="socialMedia.soundcloud"
-        external
-      >
-        <i class="fa-brands fa-soundcloud"></i
-      ></NuxtLink>
+        <span>
+          {{ media }}
+          {{ availableSocialMedia.length !== index + 1 ? '·' : '' }}</span
+        >
+      </NuxtLink>
     </div>
     <small class="d-block">
       <UtilTagDivider :array="musicStyles.data" child-name="style" tag="/" />

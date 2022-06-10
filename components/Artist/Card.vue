@@ -35,11 +35,17 @@ defineProps({
         :slug="artist.attributes.slug"
       />
       <p class="my-4">{{ artist.attributes.description }}</p>
-      <h2 class="text-2xl mb-4">Radio Shows</h2>
+      <h2
+        v-if="artist.attributes.radio_shows.data.length"
+        class="text-2xl mb-4"
+      >
+        Radio Shows
+      </h2>
       <NuxtLink
         v-for="(radioShow, index) in artist.attributes.radio_shows.data"
         :key="index"
         :to="`/radio-show/${radioShow.attributes.slug}`"
+        class="cursor-pointer hover:text-green-200"
       >
         <p class="underline">{{ radioShow.attributes.longTitle }}</p>
       </NuxtLink>
