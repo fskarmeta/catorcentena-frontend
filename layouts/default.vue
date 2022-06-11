@@ -2,6 +2,20 @@
 import logoImage from 'images/logo.png'
 import ogImage from 'images/ogImage.png'
 import backgroundImage from 'images/stars.jpg'
+
+onMounted(() => {
+  if (process.client) {
+    const script = document.createElement('script')
+    script.setAttribute('type', 'text/javascript')
+    script.setAttribute('id', 'cid0020000315953383243')
+    script.setAttribute('src', '//st.chatango.com/js/gz/emb.js')
+    script.setAttribute('data-cfasync', 'false')
+    script.setAttribute('async', '')
+    script.setAttribute('style', 'width: 200px;height: 300px;')
+    script.innerHTML = `{"handle":"catorcentena","arch":"js","styles":{"a":"336666","b":100,"c":"FFFFFF","d":"FFFFFF","k":"336666","l":"336666","m":"336666","n":"FFFFFF","p":"10","q":"336666","r":100,"pos":"br","cv":1,"cvbg":"336666","cvw":75,"cvh":30,"fwtickm":1}}`
+    document.querySelector('body').appendChild(script)
+  }
+})
 </script>
 
 <template>
