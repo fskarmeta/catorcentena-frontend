@@ -7,12 +7,12 @@ onMounted(() => {
   if (process.client) {
     const script = document.createElement('script')
     script.setAttribute('type', 'text/javascript')
-    script.setAttribute('id', 'cid0020000315954239809')
+    script.setAttribute('id', 'cid0020000315954495196')
     script.setAttribute('src', '//st.chatango.com/js/gz/emb.js')
     script.setAttribute('data-cfasync', 'false')
     script.setAttribute('async', '')
     script.setAttribute('style', 'width: 200px;height: 300px;')
-    script.innerHTML = `{"handle":"catorcentena","arch":"js","styles":{"a":"2d3748","b":100,"c":"FFFFFF","d":"FFFFFF","k":"2d3748","l":"2d3748","m":"2d3748","n":"FFFFFF","p":"10","q":"2d3748","r":100,"pos":"br","cv":1,"cvbg":"2d3748","cvw":75,"cvh":30,"ticker":1,"fwtickm":1}}`
+    script.innerHTML = `{"handle":"catorcentena","arch":"js","styles":{"a":"2d3748","b":100,"c":"FFFFFF","d":"FFFFFF","k":"2d3748","l":"2d3748","m":"2d3748","n":"FFFFFF","p":"10","q":"2d3748","r":100,"pos":"br","cv":1,"cvbg":"2d3748","cvw":75,"cvh":30}}`
     document.querySelector('body').appendChild(script)
   }
 })
