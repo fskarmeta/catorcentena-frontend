@@ -11,19 +11,32 @@ const songTitle = ref('')
 
 const { isPlaying, currentVolume, play, pause, volume } = useAudioPlayer(player)
 
+const isLive = ref(false)
+const text = ref('')
+
 onMounted(async () => {
   try {
-    const data = await $fetch('/api/getSongTitle')
-    const { title } = data
-    if (title) songTitle.value = title
+    const data = await GqlAudioplayer()
+    const { live, liveText, liveMessage } = data.audioPlayer.data.attributes
+    isLive.value = live
+    if (!live) {
+      try {
+        const data = await $fetch('/api/getSongTitle')
+        const { title } = data
+        if (title) songTitle.value = title
+      } catch {}
+      setInterval(async () => {
+        try {
+          const data = await $fetch('/api/getSongTitle')
+          const { title } = data
+          if (title) songTitle.value = title
+        } catch {}
+      }, 45000)
+      return
+    }
+    text.value = liveText || 'LIVE MIX NOW'
+    songTitle.value = liveMessage || ''
   } catch {}
-  setInterval(async () => {
-    try {
-      const data = await $fetch('/api/getSongTitle')
-      const { title } = data
-      if (title) songTitle.value = title
-    } catch {}
-  }, 45000)
 })
 </script>
 
@@ -51,7 +64,11 @@ onMounted(async () => {
           @change="volume"
         />
       </div>
-      <NavbarLiveNow class="order-1 sm:order-2" />
+      <NavbarLiveNow
+        class="order-1 sm:order-2"
+        :is-live="isLive"
+        :live-text="text"
+      />
     </div>
     <div class="wrapper absolute w-200px">
       <p class="target">{{ songTitle }}</p>

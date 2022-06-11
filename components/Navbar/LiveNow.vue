@@ -1,12 +1,13 @@
 <script setup>
-const isLive = ref(false)
-
-onMounted(async () => {
-  try {
-    const data = await GqlAudioplayer()
-    const { live } = data.audioPlayer.data.attributes
-    isLive.value = live
-  } catch {}
+defineProps({
+  isLive: {
+    type: Boolean,
+    default: false,
+  },
+  liveText: {
+    type: String,
+    default: 'LIVE MIX NOW',
+  },
 })
 </script>
 
@@ -18,7 +19,7 @@ onMounted(async () => {
       <div></div>
       <div></div>
     </div>
-    <div class="live-text">LIVE MIX NOW</div>
+    <div class="live-text">{{ liveText }}</div>
   </div>
 </template>
 

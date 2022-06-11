@@ -3,6 +3,8 @@ query Audioplayer {
     data {
       attributes {
         live
+        liveText
+        liveMessage
       }
     }
   }
