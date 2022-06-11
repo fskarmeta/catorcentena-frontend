@@ -55,7 +55,7 @@ onMounted(() => {
           />
         </NuxtLink>
       </div>
-      <main class="mx-5 md:mx-0 mb-35px">
+      <main class="mx-5 md:mx-0 mb-100px md:mb-5">
         <!-- All pages beeing rendered here -->
         <slot />
       </main>
