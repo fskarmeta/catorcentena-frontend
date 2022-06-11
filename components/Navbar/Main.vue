@@ -21,7 +21,7 @@ provide('showMobileMenu', showMobileMenu)
 </script>
 
 <template>
-  <div>
+  <header>
     <nav class="w-full">
       <div class="flex flex-col sm:flex-row justify-between pt-0 sm:pt-5">
         <NavbarLinksDesktop :links="links" />
@@ -36,5 +36,5 @@ provide('showMobileMenu', showMobileMenu)
         </div>
       </div>
     </nav>
-  </div>
+  </header>
 </template>

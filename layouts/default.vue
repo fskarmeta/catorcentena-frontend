@@ -41,10 +41,10 @@ import backgroundImage from 'images/stars.jpg'
           />
         </NuxtLink>
       </div>
-      <div class="mx-5 md:mx-0 mb-5">
+      <main class="mx-5 md:mx-0 mb-5">
         <!-- All pages beeing rendered here -->
         <slot />
-      </div>
+      </main>
     </div>
   </div>
 </template>
