@@ -7,12 +7,12 @@ onMounted(() => {
   if (process.client) {
     const script = document.createElement('script')
     script.setAttribute('type', 'text/javascript')
-    script.setAttribute('id', 'cid0020000315954495196')
+    script.setAttribute('id', 'cid0020000315954739647')
     script.setAttribute('src', '//st.chatango.com/js/gz/emb.js')
     script.setAttribute('data-cfasync', 'false')
     script.setAttribute('async', '')
     script.setAttribute('style', 'width: 200px;height: 300px;')
-    script.innerHTML = `{"handle":"catorcentena","arch":"js","styles":{"a":"2d3748","b":100,"c":"FFFFFF","d":"FFFFFF","k":"2d3748","l":"2d3748","m":"2d3748","n":"FFFFFF","p":"10","q":"2d3748","r":100,"pos":"br","cv":1,"cvbg":"2d3748","cvw":75,"cvh":30}}`
+    script.innerHTML = `{"handle":"catorcentena","arch":"js","styles":{"a":"2d3748","b":100,"c":"FFFFFF","d":"FFFFFF","k":"2d3748","l":"2d3748","m":"2d3748","n":"FFFFFF","p":"10","q":"2d3748","r":100,"pos":"br","cv":1,"cvbg":"2d3748","cvw":75,"cvh":30,"fwtickm":1}}`
     document.querySelector('body').appendChild(script)
   }
 })
@@ -55,7 +55,7 @@ onMounted(() => {
           />
         </NuxtLink>
       </div>
-      <main class="mx-5 md:mx-0 mb-5">
+      <main class="mx-5 md:mx-0 mb-35px">
         <!-- All pages beeing rendered here -->
         <slot />
       </main>
