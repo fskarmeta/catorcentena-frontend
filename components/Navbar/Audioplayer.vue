@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import { useAudioPlayer } from '~~/composables/useAudioPlayer'
+import pauseSolidSvg from '~/assets/images/pause-solid.svg'
+import playSolidSvg from '~/assets/images/play-solid.svg'
 
 const config = useRuntimeConfig()
 
@@ -67,14 +69,28 @@ onMounted(async () => {
       <div
         class="flex pt-5 px-5 sm:pt-0 sm:px-0 items-center order-2 sm:order-1"
       >
-        <i
-          class="fa fa-2x mx-2"
-          :class="[isPlaying ? 'fa-pause' : 'fa-play']"
-          @click="isPlaying ? pause() : play()"
-        ></i>
+        <img
+          v-show="isPlaying"
+          class="h-30px hover:cursor-pointer"
+          :src="pauseSolidSvg"
+          alt="Pause Button Icon"
+          width="23"
+          height="30"
+          @click="pause"
+        />
+        <img
+          v-show="!isPlaying"
+          class="h-30px hover:cursor-pointer"
+          :src="playSolidSvg"
+          alt="Play Button Icon"
+          width="23"
+          height="30"
+          @click="play"
+        />
         <input
           class="w-full ml-3"
           type="range"
+          label="Volume Slider"
           min="0"
           max="100"
           :value="currentVolume"
@@ -112,7 +128,6 @@ input[type='range'] {
   animation-duration: 12s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  /* animation: rightToLeft 4.5s linear infinite; */
 }
 
 @keyframes rightToLeft {

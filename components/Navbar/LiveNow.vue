@@ -27,7 +27,6 @@ defineProps({
 .live-text {
   font-size: 10px;
   white-space: nowrap;
-  // margin: 4px 0 0 4px;
   font-weight: 600;
 }
 
@@ -35,8 +34,6 @@ defineProps({
   width: 20px;
   margin: 0 auto;
   display: inline-block;
-  // margin-bottom: 12px;
-  // margin-left: 10px;
 }
 
 .livenow > div {

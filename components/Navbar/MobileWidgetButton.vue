@@ -4,7 +4,7 @@ const showMobileMenu = inject('showMobileMenu')
 </script>
 
 <template>
-  <button class="sm:hidden" @click="showMobileMenu">
+  <button class="sm:hidden" label="Mobiel Navbar" @click="showMobileMenu">
     <svg
       class="w-10 h-10"
       xmlns="http://www.w3.org/2000/svg"
