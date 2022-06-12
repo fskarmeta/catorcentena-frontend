@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 <script setup>
 import { ref } from 'vue'
 import { useAudioPlayer } from '~~/composables/useAudioPlayer'
@@ -14,28 +13,46 @@ const { isPlaying, currentVolume, play, pause, volume } = useAudioPlayer(player)
 const isLive = ref(false)
 const text = ref('')
 
-onMounted(async () => {
-  try {
+const strapiInterval = ref(null)
+
+const getIcecastSongTitle = async () => {
+  const data = await $fetch('/api/getSongTitle')
+  const { title } = data
+  if (title) songTitle.value = title
+  setInterval(async () => {
+    const data = await $fetch('/api/getSongTitle')
+    const { title } = data
+    if (title) songTitle.value = title
+  }, 45000)
+}
+
+const getStrapiSongTitle = () => {
+  strapiInterval.value = setInterval(async () => {
     const data = await GqlAudioplayer()
     const { live, liveText, liveMessage } = data.audioPlayer.data.attributes
-    isLive.value = live
     if (!live) {
-      try {
-        const data = await $fetch('/api/getSongTitle')
-        const { title } = data
-        if (title) songTitle.value = title
-      } catch {}
-      setInterval(async () => {
-        try {
-          const data = await $fetch('/api/getSongTitle')
-          const { title } = data
-          if (title) songTitle.value = title
-        } catch {}
-      }, 45000)
+      isLive.value = false
+      getIcecastSongTitle()
+      clearInterval(strapiInterval.value)
       return
     }
     text.value = liveText || 'LIVE MIX NOW'
     songTitle.value = liveMessage || ''
+  }, 45000)
+}
+
+onMounted(async () => {
+  try {
+    const data = await GqlAudioplayer()
+    const { live, liveText, liveMessage } = data.audioPlayer.data.attributes
+    if (!live) {
+      getIcecastSongTitle()
+      return
+    }
+    isLive.value = true
+    text.value = liveText || 'LIVE MIX NOW'
+    songTitle.value = liveMessage || ''
+    getStrapiSongTitle()
   } catch {}
 })
 </script>
