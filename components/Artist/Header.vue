@@ -61,6 +61,7 @@ const availableSocialMedia = computed(() =>
         v-for="(media, index) in availableSocialMedia"
         :key="index"
         :to="socialMedia[media]"
+        target="_blank"
         class="cursor-pointer hover:text-green-200"
         external
       >
