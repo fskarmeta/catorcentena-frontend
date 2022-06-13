@@ -19,8 +19,8 @@ defineProps({
   <div class="text-center">
     <h1 class="text-4xl my-5 text-cyan-300 font-bold">{{ title }}</h1>
     <h2>{{ description }}</h2>
-    <small v-if="artists.length" class="mt-50px">
-      <span>Artistas:</span>
+    <small v-if="artists.length" class="mt-2 block">
+      <span>Artistas: </span>
       <UtilTagDivider
         :array="artists"
         child-name="artistName"

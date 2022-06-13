@@ -42,12 +42,10 @@ const navigateTo = (attr) => {
   <span
     v-for="(child, index) in array"
     :key="index"
-    :class="{ 'hover:cursor-pointer hover:text-green-200': link }"
+    :class="{ 'hover:cursor-pointer hover:text-green-200 ': link }"
     @click="navigateTo(child.attributes)"
   >
-    {{
-      child.attributes[childName] +
-      `${array.length - 1 !== index ? ` ${tag} ` : ''}`
-    }}
+    <span :class="{ underline: link }"> {{ child.attributes[childName] }}</span>
+    <span v-if="array.length - 1 !== index">{{ ' ' + tag + ' ' }} </span>
   </span>
 </template>
