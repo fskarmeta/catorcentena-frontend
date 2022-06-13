@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.2.2",
+    "@netlify/plugin-sitemap": "^0.8.1",
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "eslint": "^8.17.0",
