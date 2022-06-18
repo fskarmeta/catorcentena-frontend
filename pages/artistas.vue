@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 const { data, pending } = await useAsyncData('artists', async () => {
   const arr = await GqlArtists({})
   return arr.artists.data.sort(() => (Math.random() > 0.5 ? 1 : -1))
