@@ -12,6 +12,8 @@
     "@kevinmarrec/nuxt-pwa": "^0.2.2",
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
+    "@vueuse/core": "^8.7.4",
+    "@vueuse/nuxt": "^8.7.4",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",

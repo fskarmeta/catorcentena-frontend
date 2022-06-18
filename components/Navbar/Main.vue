@@ -21,11 +21,11 @@ provide('showMobileMenu', showMobileMenu)
 </script>
 
 <template>
-  <header>
-    <nav class="w-full">
+  <header class="w-full">
+    <nav class="container mx-auto">
       <div class="flex flex-col sm:flex-row justify-between pt-0 sm:pt-5">
         <NavbarLinksDesktop :links="links" />
-        <NavbarAudioplayer />
+        <NavbarAudioplayer class="mr-5" />
         <NavbarMobileWidgetButton class="absolute" />
         <div
           class="absolute sm:hidden w-full bg-gray-800 sm:mr-0 md:hidden text-white"
