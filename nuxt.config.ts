@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     'nuxt-graphql-client',
     '@kevinmarrec/nuxt-pwa',
     '@nuxtjs/eslint-module',
-    '@vueuse/nuxt',
   ],
   alias: {
     images: resolve(__dirname, './assets/images'),

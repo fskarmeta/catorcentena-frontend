@@ -3,8 +3,6 @@ import logoImage from 'images/logo.png'
 import ogImage from 'images/ogImage.png'
 import backgroundImage from 'images/stars.jpg'
 
-const { y } = useWindowScroll()
-
 onMounted(() => {
   if (process.client) {
     const script = document.createElement('script')
@@ -21,54 +19,46 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <Head>
-      <Title>Catorcentena Radio</Title>
-      <Meta name="description" content="Worldwide DJ Community" />
-      <Meta name="description" content="Catorcentena Radioshows" />
+  <Head>
+    <Title>Catorcentena Radio</Title>
+    <Meta name="description" content="Worldwide DJ Community" />
+    <Meta name="description" content="Catorcentena Radioshows" />
 
-      <!-- Facebook Meta Tags -->
-      <Meta property="og:url" content="https://catorcentena.netlify.app/" />
-      <Meta property="og:type" content="website" />
-      <Meta property="og:title" content="Catorcentena Radio" />
-      <Meta property="og:description" content="Worldwide DJ Community" />
-      <Meta property="og:image" :content="ogImage" />
+    <!-- Facebook Meta Tags -->
+    <Meta property="og:url" content="https://catorcentena.netlify.app/" />
+    <Meta property="og:type" content="website" />
+    <Meta property="og:title" content="Catorcentena Radio" />
+    <Meta property="og:description" content="Worldwide DJ Community" />
+    <Meta property="og:image" :content="ogImage" />
 
-      <!-- Twitter Meta Tags -->
-      <Meta name="twitter:card" content="summary_large_image" />
-      <Meta property="twitter:domain" content="catorcentena.netlify.app" />
-      <Meta
-        property="twitter:url"
-        content="https://catorcentena.netlify.app/"
-      />
-      <Meta name="twitter:title" content="Catorcentena Radio" />
-      <Meta name="twitter:description" content="Worldwide DJ Community" />
-      <Meta name="twitter:image" :content="ogImage" />
-    </Head>
-    <div class="bg-black self-center">
-      <div
-        class="stars"
-        :style="`background-image: url(${backgroundImage})`"
-      ></div>
-      <NavbarMain
-        class="sticky top-0"
-        :class="{ 'bg-gray-800 pb-5 z-10': y > 80 }"
-      />
-      <div class="relative container mx-auto">
-        <div class="flex justify-center">
-          <NuxtLink to="/">
-            <img
-              class="my-20 w-50 md:w-auto md:h-auto"
-              :src="logoImage"
-              alt="Catorcentena logo"
-            />
-          </NuxtLink>
-        </div>
-        <main class="mx-5 md:mx-0 mb-100px md:mb-5">
-          <!-- All pages beeing rendered here -->
-          <slot />
-        </main>
+    <!-- Twitter Meta Tags -->
+    <Meta name="twitter:card" content="summary_large_image" />
+    <Meta property="twitter:domain" content="catorcentena.netlify.app" />
+    <Meta property="twitter:url" content="https://catorcentena.netlify.app/" />
+    <Meta name="twitter:title" content="Catorcentena Radio" />
+    <Meta name="twitter:description" content="Worldwide DJ Community" />
+    <Meta name="twitter:image" :content="ogImage" />
+  </Head>
+  <div class="bg-black self-center">
+    <div
+      class="stars"
+      :style="`background-image: url(${backgroundImage})`"
+    ></div>
+    <div class="relative container mx-auto">
+      <NavbarMain />
+      <div class="flex justify-center">
+        <NuxtLink to="/">
+          <img
+            class="my-20 w-50 md:w-auto md:h-auto"
+            :src="logoImage"
+            alt="Catorcentena logo"
+          />
+        </NuxtLink>
       </div>
+      <main class="mx-5 md:mx-0 mb-100px md:mb-5">
+        <!-- All pages beeing rendered here -->
+        <slot />
+      </main>
     </div>
   </div>
 </template>
