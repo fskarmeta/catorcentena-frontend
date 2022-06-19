@@ -38,6 +38,11 @@ onMounted(() => {
     <Meta name="twitter:title" content="Catorcentena Radio" />
     <Meta name="twitter:description" content="Worldwide DJ Community" />
     <Meta name="twitter:image" :content="ogImage" />
+    <Script
+      defer
+      data-domain="catorcentena.netlify.app"
+      src="https://plausible.io/js/plausible.js"
+    ></Script>
   </Head>
   <div class="bg-black self-center">
     <div
