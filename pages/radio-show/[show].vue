@@ -11,11 +11,11 @@ const { data, pending } = await useAsyncData(route.params.show as string, () =>
 
     <Head>
       <Title>{{
-        `${data.radioShows.data[0].attributes.longTitle} show en catorcentena`
+        `${data.radioShows.data[0].attributes.longTitle} | 14.40 Radio`
       }}</Title>
       <Meta
         name="description"
-        :content="`${data.radioShows.data[0].attributes.longTitle} show en catorcentena`"
+        :content="`${data.radioShows.data[0].attributes.longTitle} show en catorcentena radio`"
       />
     </Head>
     <div v-if="data.radioShows.data[0]">

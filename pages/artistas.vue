@@ -10,8 +10,8 @@ const { data, pending } = await useAsyncData('artists', async () => {
     <UtilSpinner v-if="pending" />
 
     <Head>
-      <Title>Catorcentena Artistas</Title>
-      <Meta name="description" content="Catorcentena Artistas" />
+      <Title>Artistas | 14.40 Radio</Title>
+      <Meta name="description" content="Artistas en catorcentena radio" />
     </Head>
     <ArtistCards v-if="data.length" :artists="data" />
   </div>

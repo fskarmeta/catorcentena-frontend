@@ -9,8 +9,8 @@ const { data, pending } = await useAsyncData('radioShows', () =>
     <UtilSpinner v-if="pending" />
 
     <Head>
-      <Title>Catorcentena Radioshows</Title>
-      <Meta name="description" content="Catorcentena Radioshows" />
+      <Title>Radioshows | 14.40 Radio</Title>
+      <Meta name="description" content="Radio shows en catorcentena radio" />
     </Head>
     <RadioShowCards
       v-if="data.radioShows"

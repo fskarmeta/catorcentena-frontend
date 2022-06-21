@@ -13,11 +13,11 @@ const { data, pending } = await useAsyncData(
 
     <Head>
       <Title>{{
-        `${data.artists.data[0].attributes.artistName} en catorcentena`
+        `${data.artists.data[0].attributes.artistName} | 14.40 Radio`
       }}</Title>
       <Meta
         name="description"
-        :content="`${data.artists.data[0].attributes.artistName} en catorcentena`"
+        :content="`${data.artists.data[0].attributes.artistName} en catorcentena radio`"
       />
     </Head>
     <ArtistCard
