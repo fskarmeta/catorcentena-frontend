@@ -29,6 +29,7 @@ const mixCloudURI = computed(() => {
   <div
     class="max-w-800px sm:w-500px lg:w-800px border-b border-gray-500 border-dashed py-5"
   >
+    <slot></slot>
     <small>{{ mix.date }}</small>
     <h3 class="text-2xl mb-2">{{ mix.title }}</h3>
     <p v-if="mix.description" class="mb-2">{{ mix.description }}</p>
