@@ -1,5 +1,5 @@
 <script setup>
-const { data, pending } = await useAsyncData('artists', async () => {
+const { data, pending } = await useAsyncData('Artists', async () => {
   const arr = await GqlArtists({})
   return arr.artists.data.sort(() => (Math.random() > 0.5 ? 1 : -1))
 })

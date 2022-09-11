@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-const { data, pending } = await useAsyncData('radioShows', () =>
-  GqlRadioShows({})
-)
+const { data, pending } = await useAsyncGql('radioShows')
 </script>
 
 <template>
