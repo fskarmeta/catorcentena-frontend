@@ -2,6 +2,9 @@
 import logoImage from 'images/logo.png'
 import ogImage from 'images/ogImage.png'
 import backgroundImage from 'images/stars.jpg'
+import { useWindowScroll } from '@vueuse/core'
+
+const { x, y } = useWindowScroll()
 
 onMounted(() => {
   if (process.client) {
@@ -16,6 +19,8 @@ onMounted(() => {
     document.querySelector('body').appendChild(script)
   }
 })
+
+const navbarBackground = computed(() => (y.value > 60 ? 'bg-black bg-opacity-75' : ''))
 </script>
 
 <template>
@@ -49,9 +54,12 @@ onMounted(() => {
       class="stars"
       :style="`background-image: url(${backgroundImage})`"
     ></div>
-    <div class="relative container mx-auto">
-      <NavbarMain />
-      <div class="flex justify-center">
+    <div class="relative">
+      <NavbarMain
+        class="fixed w-full sm:pr-20 md:pr-30 hd:pl-20 sm:pl-10 pb-10"
+        :class="navbarBackground"
+      />
+      <div class="flex justify-center pt-20">
         <NuxtLink to="/">
           <img
             class="my-20 w-50 md:w-auto md:h-auto"
@@ -60,7 +68,7 @@ onMounted(() => {
           />
         </NuxtLink>
       </div>
-      <main class="mx-5 md:mx-0 mb-100px md:mb-5">
+      <main class="w-full mx-auto container mb-20 px-10">
         <!-- All pages beeing rendered here -->
         <slot />
       </main>
