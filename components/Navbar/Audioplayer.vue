@@ -60,7 +60,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="relative place-self-center mt-10 sm:mt-0">
+  <div class="relative place-self-center mt-5 sm:mt-0">
     <audio ref="player" :src="config.public.RADIO_HOST" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
