@@ -25,7 +25,7 @@ onMounted(() => {
     <Meta name="description" content="Catorcentena Radioshows" />
 
     <!-- Facebook Meta Tags -->
-    <Meta property="og:url" content="https://catorcentena.netlify.app/" />
+    <Meta property="og:url" content="https://catorcentenaradio.com/" />
     <Meta property="og:type" content="website" />
     <Meta property="og:title" content="Catorcentena Radio" />
     <Meta property="og:description" content="Worldwide DJ Community" />
@@ -33,14 +33,14 @@ onMounted(() => {
 
     <!-- Twitter Meta Tags -->
     <Meta name="twitter:card" content="summary_large_image" />
-    <Meta property="twitter:domain" content="catorcentena.netlify.app" />
-    <Meta property="twitter:url" content="https://catorcentena.netlify.app/" />
+    <Meta property="twitter:domain" content="catorcentenaradio.com" />
+    <Meta property="twitter:url" content="https://catorcentenaradio.com/" />
     <Meta name="twitter:title" content="Catorcentena Radio" />
     <Meta name="twitter:description" content="Worldwide DJ Community" />
     <Meta name="twitter:image" :content="ogImage" />
     <Script
       defer
-      data-domain="catorcentena.netlify.app"
+      data-domain="catorcentenaradio.com"
       src="https://plausible.io/js/plausible.js"
     ></Script>
   </Head>
