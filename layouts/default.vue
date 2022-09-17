@@ -8,6 +8,14 @@ const { x, y } = useWindowScroll()
 
 onMounted(() => {
   if (process.client) {
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'G-3DSGZZYYGR')
+
     const script = document.createElement('script')
     script.setAttribute('type', 'text/javascript')
     script.setAttribute('id', 'cid0020000315954739647')
@@ -20,7 +28,9 @@ onMounted(() => {
   }
 })
 
-const navbarBackground = computed(() => (y.value > 60 ? 'bg-black bg-opacity-75' : ''))
+const navbarBackground = computed(() =>
+  y.value > 60 ? 'bg-black bg-opacity-75' : ''
+)
 </script>
 
 <template>
@@ -44,9 +54,8 @@ const navbarBackground = computed(() => (y.value > 60 ? 'bg-black bg-opacity-75'
     <Meta name="twitter:description" content="Worldwide DJ Community" />
     <Meta name="twitter:image" :content="ogImage" />
     <Script
-      defer
-      data-domain="catorcentenaradio.com"
-      src="https://plausible.io/js/plausible.js"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3DSGZZYYGR"
     ></Script>
   </Head>
   <div class="bg-black self-center">
