@@ -10,7 +10,7 @@ const { links } = toRefs(props)
 </script>
 
 <template>
-  <div class="flex space-x-4">
+  <div class="flex space-x-4 pt-2">
     <!-- primary nav -->
     <div class="hidden sm:flex items-center space-x-1 gap-x-5">
       <NuxtLink

@@ -56,7 +56,7 @@ const navbarBackground = computed(() => (y.value > 60 ? 'bg-black bg-opacity-75'
     ></div>
     <div class="relative">
       <NavbarMain
-        class="fixed w-full sm:pr-20 md:pr-30 hd:pl-20 sm:pl-10 pb-10"
+        class="fixed w-full sm:pr-10 md:pr-20 hd:pl-20 sm:pl-10 pb-10"
         :class="navbarBackground"
       />
       <div class="flex justify-center pt-20">
