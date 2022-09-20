@@ -53,6 +53,7 @@ const navbarBackground = computed(() =>
     <Meta name="twitter:title" content="Catorcentena Radio" />
     <Meta name="twitter:description" content="Worldwide DJ Community" />
     <Meta name="twitter:image" :content="ogImage" />
+    <Meta name="google-site-verification" content="N77LcgH5KVsNa6tFkqSM2HYzqUOMIaWoa_iu6CS6NG0" />
     <Script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-3DSGZZYYGR"
