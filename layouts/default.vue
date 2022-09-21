@@ -1,5 +1,5 @@
 <script setup>
-import logoImage from 'images/logo.png'
+import logoImage from 'images/new_logo.png'
 import ogImage from 'images/ogImage.png'
 import backgroundImage from 'images/stars.jpg'
 import { useWindowScroll } from '@vueuse/core'
@@ -69,10 +69,10 @@ const navbarBackground = computed(() =>
         class="fixed w-full sm:pr-10 md:pr-20 hd:pl-20 sm:pl-10 pb-10"
         :class="navbarBackground"
       />
-      <div class="flex justify-center pt-20">
+      <div class="flex justify-center pt-20 sm:pt-10">
         <NuxtLink to="/">
           <img
-            class="my-20 w-50 md:w-auto md:h-auto"
+            class="h-80 sm:h-90 md:h-auto"
             :src="logoImage"
             alt="Catorcentena logo"
           />
