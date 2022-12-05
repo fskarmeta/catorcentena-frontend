@@ -13,7 +13,7 @@ const { data, pending } = await useAsyncGql('sisterRadios')
         content="Radios hermanas de catorcentena radio"
       />
     </Head>
-    <h1 class="mx-auto w-full text-3xl mb-15">Radios hermanas</h1>
+    <h1 class="mx-auto w-full text-3xl mb-15">Radios Hermanas</h1>
     <SisterRadio
       v-for="radio in data?.sisterRadios?.data"
       :key="radio.id!"
