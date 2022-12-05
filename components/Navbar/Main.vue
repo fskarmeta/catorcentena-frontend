@@ -10,7 +10,7 @@ const showMenu = ref(false)
 const links: NavbarLinks[] = [
   { name: 'Radio Shows', url: '/' },
   { name: 'Artistas', url: '/artistas' },
-  // { name: 'Radios Hermanas', url: '/artistas' },
+  { name: 'Radios Hermanas', url: '/radios-hermanas' },
 ]
 
 const showMobileMenu = () => {

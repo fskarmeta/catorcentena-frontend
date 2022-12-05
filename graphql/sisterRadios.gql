@@ -1,0 +1,20 @@
+query sisterRadios {
+  sisterRadios {
+    data {
+      id
+      attributes {
+        title
+        description
+        link
+        image {
+          data {
+            attributes {
+              url
+              formats
+            }
+          }
+        }
+      }
+    }
+  }
+}
