@@ -10,7 +10,7 @@ const { mix } = toRefs(props)
 const mixCloudURI = computed(() => {
   const mixCloudLink = encodeURIComponent(mix.value.mixcloudUrl)
   return (
-    'https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=0' + mixCloudLink
+    'https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=' + mixCloudLink
   )
 })
 </script>
