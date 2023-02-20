@@ -13,15 +13,15 @@ const { data, pending } = await useAsyncData(
 
     <Head>
       <Title>{{
-        `${data.artists.data[0].attributes.artistName} | 14.40 Radio`
+        `${data?.artists?.data[0]?.attributes?.artistName} | 14.40 Radio`
       }}</Title>
       <Meta
         name="description"
-        :content="`${data.artists.data[0].attributes.artistName} en catorcentena radio`"
+        :content="`${data?.artists?.data[0]?.attributes?.artistName} en catorcentena radio`"
       />
     </Head>
     <ArtistCard
-      v-if="data.artists.data.length"
+      v-if="data?.artists?.data.length"
       :artist="data.artists.data[0]"
     />
   </div>

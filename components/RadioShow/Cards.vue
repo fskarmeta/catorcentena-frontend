@@ -12,7 +12,7 @@ defineProps({
     <RadioShowCard
       v-for="(radioShow, index) in radioShows"
       :key="index"
-      :radio-show="radioShow"
+      :radio-show="radioShow || []"
     />
   </div>
 </template>
