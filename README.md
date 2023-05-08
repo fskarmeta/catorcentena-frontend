@@ -6,6 +6,8 @@ https://catorcentenaradio.com/
 
 ## Backend
 
-Backend will be a Strapi instance
+Backend is s Strapi instance
 
 https://github.com/fskarmeta/catorcentena-back
+
+https://catorcentena-graphql.herokuapp.com/
