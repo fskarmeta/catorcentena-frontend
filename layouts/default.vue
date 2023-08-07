@@ -1,8 +1,8 @@
 <script setup>
-import { useWindowScroll } from '@vueuse/core'
 import logoImage from 'images/new_logo.png'
 import ogImage from 'images/ogImage.png'
 import backgroundImage from 'images/stars.jpg'
+import { useWindowScroll } from '@vueuse/core'
 
 const { x, y } = useWindowScroll()
 
@@ -53,10 +53,7 @@ const navbarBackground = computed(() =>
     <Meta name="twitter:title" content="Catorcentena Radio" />
     <Meta name="twitter:description" content="Worldwide DJ Community" />
     <Meta name="twitter:image" :content="ogImage" />
-    <Meta
-      name="google-site-verification"
-      content="N77LcgH5KVsNa6tFkqSM2HYzqUOMIaWoa_iu6CS6NG0"
-    />
+    <Meta name="google-site-verification" content="N77LcgH5KVsNa6tFkqSM2HYzqUOMIaWoa_iu6CS6NG0" />
     <Script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-3DSGZZYYGR"
@@ -72,25 +69,7 @@ const navbarBackground = computed(() =>
         class="fixed w-full sm:pr-10 md:pr-20 hd:pl-20 sm:pl-10 pb-10"
         :class="navbarBackground"
       />
-      <div class="flex justify-center pt-20 sm:pt-10 flex-col items-center">
-        <section class="mt-24 mx-4 text-center text-yellow-200">
-          <p class="text-2xl">
-            We have
-            <a
-              class="text-blue-700"
-              href="https://ra.co/events/1745314"
-              target="_blank"
-              >party</a
-            >
-            going on the 6th of August in Berlin, tickets
-            <a
-              class="text-blue-700"
-              href="https://pgb.sumupstore.com/product/pre-sale-ticket-for-1440radioxalgoritmo-pgb-open-air"
-              target="_blank"
-              >here</a
-            >!
-          </p>
-        </section>
+      <div class="flex justify-center pt-20 sm:pt-10">
         <NuxtLink to="/">
           <img
             class="h-80 sm:h-90 md:h-auto"
