@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     public: {
       GQL_HOST: 'https://catorcentena-graphql.herokuapp.com/graphql',
       RADIO_HOST:
-        'Fps3.listen2myradio.com:2199/listen.php?ip=212.84.160.3&port=8830&type=ice&mount=1440radio',
+        'fps4.listen2myradio.com:2199/listen.php?ip=212.84.160.3&port=8830&type=ice&mount=1440radio',
     },
   },
   app: {
