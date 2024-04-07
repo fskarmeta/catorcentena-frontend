@@ -1,6 +1,11 @@
 export default defineEventHandler(async () => {
+  const config = useRuntimeConfig()
+
   try {
-    const data = await $fetch('http://212.84.160.3:8830/status-json.xsl')
+    // get runtime environment variable nuxt
+    const data = await $fetch(
+      `http://${config.public.RADIO_HOST_IP}/status-json.xsl`
+    )
     return {
       title: data.icestats.source.title,
     }
