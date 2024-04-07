@@ -8,7 +8,7 @@ export const useAudioPlayer = (playerRef) => {
   player = playerRef
   const play = () => {
     player.value.src =
-      '//Fps3.listen2myradio.com:2199/listen.php?ip=109.169.23.124&port=8035&type=ice&mount=1440radio'
+      '//Fps3.listen2myradio.com:2199/listen.php?ip=212.84.160.3&port=8830&type=ice&mount=1440radio'
     player.value.load()
     player.value.play()
     isPlaying.value = true
