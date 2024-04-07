@@ -19,4 +19,5 @@ const showMobileMenu = inject('showMobileMenu')
     @click="showMobileMenu"
     >{{ link.name }}</NuxtLink
   >
+  <AutoCompleteSearch />
 </template>
