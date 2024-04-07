@@ -5,10 +5,11 @@ const currentVolume = ref('100')
 let player = null
 
 export const useAudioPlayer = (playerRef) => {
+  const config = useRuntimeConfig()
+
   player = playerRef
   const play = () => {
-    player.value.src =
-      '//fps4.listen2myradio.com:2199/listen.php?ip=212.84.160.3&port=8830&type=ice&mount=1440radio'
+    player.value.src = `//${config.public.RADIO_HOST_URL}`
     player.value.load()
     player.value.play()
     isPlaying.value = true
