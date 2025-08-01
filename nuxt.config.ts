@@ -8,7 +8,7 @@ const RADIO_CONFIG = {
   HOST: 'fpsnew2.listen2myradio.com',
   HOST_PORT: '2199',
   RADIO_IP: '212.84.160.3',
-  RADIO_PORT: '8830',
+  RADIO_PORT: '6240',
   RADIO_MOUNT: '1440radio',
   RADIO_TYPE: 'ice',
 }
